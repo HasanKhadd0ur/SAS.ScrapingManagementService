@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36119.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source Code", "Source Code", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{4B10D4C3-A903-47DF-ACB3-4331F4FECD68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Domain", "src\SAS.ScrapingManagementService.Domain\SAS.ScrapingManagementService.Domain.csproj", "{C92784BA-75E0-4399-AEA0-ED3699E5A16D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared Kernel", "Shared Kernel", "{61C2564D-7AE4-439A-B156-9529C77BBCFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.SharedKernel", "src\SAS.ScrapingManagementService.SharedKernel\SAS.ScrapingManagementService.SharedKernel.csproj", "{85FECDEB-25D0-F693-EE97-6421FEC25BFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C92784BA-75E0-4399-AEA0-ED3699E5A16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92784BA-75E0-4399-AEA0-ED3699E5A16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92784BA-75E0-4399-AEA0-ED3699E5A16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92784BA-75E0-4399-AEA0-ED3699E5A16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85FECDEB-25D0-F693-EE97-6421FEC25BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85FECDEB-25D0-F693-EE97-6421FEC25BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85FECDEB-25D0-F693-EE97-6421FEC25BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85FECDEB-25D0-F693-EE97-6421FEC25BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B10D4C3-A903-47DF-ACB3-4331F4FECD68} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C92784BA-75E0-4399-AEA0-ED3699E5A16D} = {4B10D4C3-A903-47DF-ACB3-4331F4FECD68}
+		{61C2564D-7AE4-439A-B156-9529C77BBCFC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{85FECDEB-25D0-F693-EE97-6421FEC25BFC} = {61C2564D-7AE4-439A-B156-9529C77BBCFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE2B55AC-AC44-4757-A8C5-FF2AE75FABA1}
+	EndGlobalSection
+EndGlobal

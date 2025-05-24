@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using SAS.ScrapingManagementService.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Domain.Scrapers.Entities
 {
-    internal class Scraper
+    public class Scraper  : BaseEntity<Guid>
     {
+        public String ScraperName { get; set; }
+        //public DateTime ScraperName { get; set; }
+
+
     }
+
 }

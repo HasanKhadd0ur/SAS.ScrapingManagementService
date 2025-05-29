@@ -8,7 +8,7 @@ using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 
-namespace SAS.ScrapingManagementService.Application.ScrapingTasks.Commands
+namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask
 {
     public class CreateScrapingTaskCommandHandler : ICommandHandler<CreateScrapingTaskCommand, Result<Guid>>
     {

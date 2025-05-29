@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
+﻿using FluentValidation;
 using MediatR;
-using System.Reflection;
-using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Application.Behaviors.LoggingBehavior;
 using SAS.ScrapingManagementService.Application.Behaviors.ValidationBehavior;
+using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
+using System.Reflection;
 
 namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjection
 {
@@ -15,6 +15,13 @@ namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjecti
 
             services.AddMyMediatR()
                 .AddMappers();
+            
+            // Register orchestrator
+            services.AddSingleton<SchedulerOrchestrator>(provider =>
+            {
+                var schedulers = provider.GetServices<IPlatformTaskScheduler>();
+                return new SchedulerOrchestrator(schedulers);
+            });
 
             return services;
         }

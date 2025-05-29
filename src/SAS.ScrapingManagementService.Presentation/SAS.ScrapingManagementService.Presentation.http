@@ -1,0 +1,6 @@
+@SAS.ScrapingManagementService.Presentation_HostAddress = http://localhost:5118
+
+GET {{SAS.ScrapingManagementService.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

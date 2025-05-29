@@ -2,7 +2,7 @@
 using SAS.ScrapingManagementService.Application.Scrapers.Common;
 using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
 
-namespace SAS.ScrapingManagementService.Application.ScrapingTasks.Commands
+namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask
 {
     public class CreateScrapingTaskCommand : ICommand<Result<Guid>>
     {

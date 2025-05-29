@@ -18,9 +18,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Application", "src\SAS.ScrapingManagementService.Application\SAS.ScrapingManagementService.Application.csproj", "{A8FB706B-C80C-4B8C-872A-8ED905AB5CD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5DCB5D06-1D9F-468E-AA10-32CE13B36A6B}"
-	ProjectSection(SolutionItems) = preProject
-		src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj = src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Infrastructure.Services", "src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Services\SAS.ScrapingManagementService.Infrastructure.Services.csproj", "{63E81142-6860-4421-A7F3-126B7D5C285D}"
 EndProject
@@ -31,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Presentation", "src\SAS.ScrapingManagementService.Presentation\SAS.ScrapingManagementService.Presentation.csproj", "{F8355F92-4905-4BDC-9886-26E8424381D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.API", "src\SAS.ScrapingManagementService.API\SAS.ScrapingManagementService.API.csproj", "{8BBECEB2-4E98-4542-8733-A72316FDC665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Infrastructure.Persistence", "src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj", "{0129F56A-8D3D-4AA7-898D-37DAE4601D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +61,10 @@ Global
 		{8BBECEB2-4E98-4542-8733-A72316FDC665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BBECEB2-4E98-4542-8733-A72316FDC665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BBECEB2-4E98-4542-8733-A72316FDC665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0129F56A-8D3D-4AA7-898D-37DAE4601D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0129F56A-8D3D-4AA7-898D-37DAE4601D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0129F56A-8D3D-4AA7-898D-37DAE4601D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0129F56A-8D3D-4AA7-898D-37DAE4601D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +82,7 @@ Global
 		{85CC7E1B-3D0F-4966-A096-835C48A1EAFC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F8355F92-4905-4BDC-9886-26E8424381D4} = {9BCDDB13-C69B-4934-B3B1-63B8E249081B}
 		{8BBECEB2-4E98-4542-8733-A72316FDC665} = {85CC7E1B-3D0F-4966-A096-835C48A1EAFC}
+		{0129F56A-8D3D-4AA7-898D-37DAE4601D5B} = {5DCB5D06-1D9F-468E-AA10-32CE13B36A6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE2B55AC-AC44-4757-A8C5-FF2AE75FABA1}

@@ -18,12 +18,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Application", "src\SAS.ScrapingManagementService.Application\SAS.ScrapingManagementService.Application.csproj", "{A8FB706B-C80C-4B8C-872A-8ED905AB5CD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5DCB5D06-1D9F-468E-AA10-32CE13B36A6B}"
+	ProjectSection(SolutionItems) = preProject
+		src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj = src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Infrastructure.Services", "src\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Services\SAS.ScrapingManagementService.Infrastructure.Services.csproj", "{63E81142-6860-4421-A7F3-126B7D5C285D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9BCDDB13-C69B-4934-B3B1-63B8E249081B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAS.ScrapingManagementService.Infrastructure.Persistence", "src\SAS.ScrapingManagementService.Infrastrcuture\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj", "{C6EBFE7E-4787-4BD9-92D1-84F353D161C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{85CC7E1B-3D0F-4966-A096-835C48A1EAFC}"
 EndProject
@@ -53,10 +54,6 @@ Global
 		{63E81142-6860-4421-A7F3-126B7D5C285D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E81142-6860-4421-A7F3-126B7D5C285D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63E81142-6860-4421-A7F3-126B7D5C285D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6EBFE7E-4787-4BD9-92D1-84F353D161C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6EBFE7E-4787-4BD9-92D1-84F353D161C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6EBFE7E-4787-4BD9-92D1-84F353D161C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6EBFE7E-4787-4BD9-92D1-84F353D161C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8355F92-4905-4BDC-9886-26E8424381D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8355F92-4905-4BDC-9886-26E8424381D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8355F92-4905-4BDC-9886-26E8424381D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -79,7 +76,6 @@ Global
 		{5DCB5D06-1D9F-468E-AA10-32CE13B36A6B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{63E81142-6860-4421-A7F3-126B7D5C285D} = {5DCB5D06-1D9F-468E-AA10-32CE13B36A6B}
 		{9BCDDB13-C69B-4934-B3B1-63B8E249081B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{C6EBFE7E-4787-4BD9-92D1-84F353D161C6} = {5DCB5D06-1D9F-468E-AA10-32CE13B36A6B}
 		{85CC7E1B-3D0F-4966-A096-835C48A1EAFC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F8355F92-4905-4BDC-9886-26E8424381D4} = {9BCDDB13-C69B-4934-B3B1-63B8E249081B}
 		{8BBECEB2-4E98-4542-8733-A72316FDC665} = {85CC7E1B-3D0F-4966-A096-835C48A1EAFC}

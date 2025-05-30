@@ -4,6 +4,8 @@
     {
         public string Name { get; set; }
         public string Target { get; set; }
+        public Guid DomainId { get; set; }
+        public Guid PlatformId { get; set; }
         public int Limit { get; set; } = 1;
     }
 

@@ -44,7 +44,10 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
             var dataSource = _mapper.Map<DataSource>(request);
 
             dataSource.Id = _idProvider.GenerateNewId();
+
+            dataSource.DomainId = request.DomainId;
             dataSource.Domain = domain;
+            dataSource.PlatformId = request.PlatformId;
             dataSource.Platform = platform;
 
             await _dataSourceRepo.AddAsync(dataSource);

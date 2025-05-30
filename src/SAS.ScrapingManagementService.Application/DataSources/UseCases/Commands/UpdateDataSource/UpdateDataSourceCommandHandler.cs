@@ -31,7 +31,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
         {
             var dataSource = await _dataSourceRepo.GetByIdAsync(request.Id);
             if (dataSource is null)
-                return Result.NotFound(DataSourceErrors.NotFound);
+                return Result.Invalid(DataSourceErrors.UnExistDataSource);
 
             var domain = await _domainRepo.GetByIdAsync(request.DomainId);
             if (domain is null)

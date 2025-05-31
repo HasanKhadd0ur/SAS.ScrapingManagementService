@@ -1,0 +1,49 @@
+@SAS.ScrapingManagementService_API_HostAddress = http://localhost:5067
+
+### Get all DataSources (with pagination)
+GET {{SAS.ScrapingManagementService_API_HostAddress}}/api/datasources?pageNumber=1&pageSize=10
+Accept: application/json
+
+###
+
+### Get a single DataSource by ID
+GET {{SAS.ScrapingManagementService_API_HostAddress}}/api/datasources/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###
+
+### Add a new DataSource
+POST {{SAS.ScrapingManagementService_API_HostAddress}}/api/datasources
+Content-Type: application/json
+
+{
+  "name": "Test Source",
+  "type": "Telegram",
+  "configuration": {
+    "token": "12345",
+    "channel": "@test_channel"
+  }
+}
+
+###
+
+### Update an existing DataSource
+PUT {{SAS.ScrapingManagementService_API_HostAddress}}/api/datasources/00000000-0000-0000-0000-000000000000
+Content-Type: application/json
+
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "name": "Updated Source",
+  "type": "Twitter",
+  "configuration": {
+    "username": "@updated_source"
+  }
+}
+
+###
+
+### Delete a DataSource
+DELETE {{SAS.ScrapingManagementService_API_HostAddress}}/api/datasources/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+###

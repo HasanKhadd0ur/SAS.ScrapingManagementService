@@ -5,6 +5,7 @@ using SAS.ScrapingManagementService.Infrastructure.Services.Providers;
 using Microsoft.Extensions.Options;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
 using Microsoft.Extensions.Configuration;
+using SAS.ScrapingManagementService.Application.Contracts.Messaging;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Services.DependencyInjection
 {
@@ -28,6 +29,9 @@ namespace SAS.ScrapingManagementService.Infrastructure.Services.DependencyInject
             
             // Register Datetime Provider
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+            // Register Kafka Producer
+            services.AddSingleton<IMessageProducerService, KafkaMessageProducerService>();
 
 
             // Register platform schedulers

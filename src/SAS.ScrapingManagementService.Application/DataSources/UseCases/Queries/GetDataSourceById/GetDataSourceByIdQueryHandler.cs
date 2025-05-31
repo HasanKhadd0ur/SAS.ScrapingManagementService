@@ -10,11 +10,11 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries
 {
     public class GetDataSourceByIdQueryHandler : IRequestHandler<GetDataSourceByIdQuery, Result<DataSourceDto>>
     {
-        private readonly IReadRepository<DataSource, Guid> _dataSourceRepo;
+        private readonly IRepository<DataSource, Guid> _dataSourceRepo;
         private readonly IMapper _mapper;
 
         public GetDataSourceByIdQueryHandler(
-            IReadRepository<DataSource, Guid> dataSourceRepo,
+            IRepository<DataSource, Guid> dataSourceRepo,
             IMapper mapper)
         {
             _dataSourceRepo = dataSourceRepo;

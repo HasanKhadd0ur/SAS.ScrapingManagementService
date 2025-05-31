@@ -119,12 +119,13 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfi
                 .IsRequired();
 
             builder.Property(t => t.CompletedAt)
-                .IsRequired();
+            .IsRequired(false);
 
             builder.HasOne(t => t.ScrapingExecutor)
                 .WithMany()
                 .HasForeignKey(e => e.ScraperId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict)
+                .IsRequired(false);
 
             builder.HasOne(t => t.Domain)
                 .WithMany()

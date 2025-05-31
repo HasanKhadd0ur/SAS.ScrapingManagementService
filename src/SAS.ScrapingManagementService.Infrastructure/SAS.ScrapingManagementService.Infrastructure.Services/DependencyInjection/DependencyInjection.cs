@@ -29,6 +29,8 @@ namespace SAS.ScrapingManagementService.Infrastructure.Services.DependencyInject
             
             // Register Datetime Provider
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+            
+            services.Configure<KafkaSettings>(configuration.GetSection("Kafka"));
 
             // Register Kafka Producer
             services.AddSingleton<IMessageProducerService, KafkaMessageProducerService>();

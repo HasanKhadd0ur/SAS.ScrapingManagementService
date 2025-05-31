@@ -13,7 +13,10 @@ public class KafkaMessageProducerService : IMessageProducerService
     {
         var config = new ProducerConfig
         {
-            BootstrapServers = kafkaSettings.Value.BootstrapServers
+            BootstrapServers = kafkaSettings.Value.BootstrapServers,
+            MessageTimeoutMs = 30000,
+            RequestTimeoutMs = 10000,
+            Debug = "broker,topic,msg"
         };
 
         _producer = new ProducerBuilder<string, string>(config).Build();

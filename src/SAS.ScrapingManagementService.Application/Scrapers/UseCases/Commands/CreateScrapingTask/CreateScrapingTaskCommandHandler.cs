@@ -7,6 +7,7 @@ using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.ScrapingManagementService.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask
 {
@@ -32,6 +33,10 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
         public async Task<Result<Guid>> Handle(CreateScrapingTaskCommand request, CancellationToken cancellationToken)
         {
             var domain = await _domainRepo.GetByIdAsync(request.DomainId);
+            var spec = new BaseSpecification<DataSource>();
+            spec.AddInclude(e => e.Platform);
+            
+
             var dataSources = await _dataSourceRepo.ListAsync();
             dataSources = dataSources.Where(d => request.DataSourceIds.Contains(d.Id));
             var task = new ScrapingTask
@@ -39,6 +44,7 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
                 Id = Guid.NewGuid(),
                 PublishedAt = DateTime.UtcNow,
                 Domain = domain,
+                DomainId=domain.Id,
                 DataSources = dataSources.ToList()
             };
 

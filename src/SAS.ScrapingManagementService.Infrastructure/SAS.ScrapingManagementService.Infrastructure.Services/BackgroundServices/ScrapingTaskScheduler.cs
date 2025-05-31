@@ -112,7 +112,8 @@ public partial class ScrapingTaskSchedulerService : BackgroundService
                     var cmd = new CreateScrapingTaskCommand
                     {
                         DomainId = domain.Id,
-                        DataSourceIds = task.DataSources.Select(ds => ds.Id).ToList()
+                        DataSourceIds = task.DataSources.Select(ds => ds.Id).ToList(),
+                        ScrapingApproach = scheduler.GetApproach()
                     };
 
                     var result = await mediator.Send(cmd, stoppingToken);

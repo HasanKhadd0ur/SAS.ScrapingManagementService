@@ -55,7 +55,9 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
                 Domain = domain.Name,
                 Platform = dataSources.First().Platform.Name,
                 DataSources = dataSources.Select(d => new DataSourceDto
-                {
+                {   PlatformId=d.PlatformId,
+                    DomainId=d.DomainId,
+                    Name=d.Name,
                     Target = d.Target,
                     Limit = 1
                 }).ToList(),

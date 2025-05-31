@@ -31,7 +31,7 @@ public class TelegramTaskScheduler : IPlatformTaskScheduler
         {
             Mode = "Scheduled",
             Platform = "Telegram",
-            Name = "TelegramChannelScraper"
+            Name = "TelegramWebScraper"
         };
     }
 }

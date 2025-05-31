@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.DomainEvents;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext
@@ -13,6 +15,11 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContex
         }
 
         // DbSets for entities
+        public DbSet<DataSource> DataSources { get; set; }
+        public DbSet<ScrapingDomain> ScrapingDomains { get; set; }
+        public DbSet<ScrapingTask> ScrapingTasks { get; set; }
+        public DbSet<Platform> Platforms { get; set; }
+        public DbSet<Scraper> Scrapers { get; set; }
 
 
 

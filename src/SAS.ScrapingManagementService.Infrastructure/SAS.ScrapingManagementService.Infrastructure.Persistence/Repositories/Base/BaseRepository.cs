@@ -1,4 +1,5 @@
 ﻿
+using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;

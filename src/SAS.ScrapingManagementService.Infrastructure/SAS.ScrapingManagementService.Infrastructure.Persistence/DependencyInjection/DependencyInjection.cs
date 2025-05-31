@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;

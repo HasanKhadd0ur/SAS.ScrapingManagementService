@@ -15,7 +15,7 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfi
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.Property(e => e.Traget)
+            builder.Property(e => e.Target)
                 .HasMaxLength(255);
 
             builder.HasOne(e => e.Platform)

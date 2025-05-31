@@ -50,7 +50,7 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
                 Platform = dataSources.First().Platform.Name,
                 DataSources = dataSources.Select(d => new DataSourceDto
                 {
-                    Target = d.Traget,
+                    Target = d.Target,
                     Limit = 1
                 }).ToList(),
                 Limit = 5,

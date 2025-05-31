@@ -1,6 +1,8 @@
-﻿namespace SAS.ScrapingManagementService.Application.DataSources.Common
+﻿using SAS.ScrapingManagementService.Application.Common;
+
+namespace SAS.ScrapingManagementService.Application.DataSources.Common
 {
-    public class DataSourceDto
+    public class DataSourceDto :BaseDTO<Guid>
     {
         public string Name { get; set; }
         public string Target { get; set; }

@@ -6,7 +6,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
     public sealed record UpdateDataSourceCommand(
     Guid Id,
     string Name,
-    string Traget,
+    string Target,
     Guid DomainId,
     Guid PlatformId) : ICommand<Result>;
 

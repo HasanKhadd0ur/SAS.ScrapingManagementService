@@ -4,8 +4,8 @@ using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
-using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 

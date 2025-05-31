@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Application.Behaviors.LoggingBehavior;
 using SAS.ScrapingManagementService.Application.Behaviors.ValidationBehavior;
+using SAS.ScrapingManagementService.Application.Common.Mappings;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
 using System.Reflection;
 
@@ -49,7 +50,7 @@ namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjecti
 
             services.AddAutoMapper(cfg =>
             {
-                //cfg.AddProfile<EventProfile>();
+                cfg.AddProfile<MappingProfile>();
                 
             });
 

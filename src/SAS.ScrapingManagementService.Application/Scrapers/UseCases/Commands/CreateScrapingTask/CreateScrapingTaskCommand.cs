@@ -10,4 +10,5 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
         public List<Guid> DataSourceIds { get; set; }
         public ScrapingApproachDto ScrapingApproach { get; set; }
     }
+
 }

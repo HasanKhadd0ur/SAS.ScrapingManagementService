@@ -8,6 +8,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
     string Name,
     string Target,
     Guid DomainId,
+    Guid DataSourceTypeId,
     Guid PlatformId) : ICommand<Result>;
 
 }

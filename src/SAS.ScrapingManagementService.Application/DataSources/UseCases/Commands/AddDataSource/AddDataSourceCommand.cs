@@ -6,6 +6,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
     public sealed record AddDataSourceCommand(
     Guid DomainId,
     Guid PlatformId,
+    Guid DataSourceTypeId,
     string Name,
     string Target) : ICommand<Result<Guid>>;
 

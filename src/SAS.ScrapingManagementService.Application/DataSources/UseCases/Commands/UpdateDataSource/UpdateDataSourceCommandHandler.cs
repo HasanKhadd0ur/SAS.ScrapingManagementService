@@ -14,18 +14,21 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
         private readonly IRepository<DataSource, Guid> _dataSourceRepo;
         private readonly IRepository<ScrapingDomain, Guid> _domainRepo;
         private readonly IRepository<Platform, Guid> _platformRepo;
+        private readonly IRepository<DataSourceType, Guid> _dataSourceTypeRepo;
         private readonly IMapper _mapper;
 
         public UpdateDataSourceCommandHandler(
             IRepository<DataSource, Guid> dataSourceRepo,
             IRepository<ScrapingDomain, Guid> domainRepo,
             IRepository<Platform, Guid> platformRepo,
-            IMapper mapper)
+            IMapper mapper,
+            IRepository<DataSourceType, Guid> dataSourceTypeRepo)
         {
             _dataSourceRepo = dataSourceRepo;
             _domainRepo = domainRepo;
             _platformRepo = platformRepo;
             _mapper = mapper;
+            _dataSourceTypeRepo = dataSourceTypeRepo;
         }
 
         public async Task<Result> Handle(UpdateDataSourceCommand request, CancellationToken cancellationToken)
@@ -41,6 +44,10 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Command
             var platform = await _platformRepo.GetByIdAsync(request.PlatformId);
             if (platform is null)
                 return Result.Invalid(PlatformErrors.UnExistPlatform);
+
+            var type = await _dataSourceTypeRepo.GetByIdAsync(request.DataSourceTypeId);
+            if (type is null)
+                return Result.Invalid(DataSourceTypeErrors.UnExistType);
 
             _mapper.Map(request, dataSource); // Update primitive properties
             dataSource.Domain = domain;

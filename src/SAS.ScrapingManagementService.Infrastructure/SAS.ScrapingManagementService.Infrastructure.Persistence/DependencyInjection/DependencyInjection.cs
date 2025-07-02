@@ -44,6 +44,7 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.DependencyInj
 
             services.AddScoped(typeof(IRepository<,>), typeof(BaseRepository<,>));
             services.AddScoped<IDataSourceRepository, DataSourceRepository>();
+            services.AddScoped<IDataSourceTypeRepository, DataSourceTypeRepository>();
             return services;
 
         }

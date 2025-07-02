@@ -2,6 +2,8 @@
 using MediatR;
 using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.Tasks.DomainErrors;
+using SAS.ScrapingManagementService.Domain.Tasks.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.AssignScrapingExecutor

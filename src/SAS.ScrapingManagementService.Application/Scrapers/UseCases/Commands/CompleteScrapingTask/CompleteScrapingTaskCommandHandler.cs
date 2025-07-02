@@ -1,9 +1,9 @@
 ﻿using Ardalis.Result;
 using MediatR;
-using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
+using SAS.ScrapingManagementService.Domain.Tasks.Entities;
+using SAS.ScrapingManagementService.Domain.Tasks.DomainErrors;
 
 namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CompleteScrapingTask
 {

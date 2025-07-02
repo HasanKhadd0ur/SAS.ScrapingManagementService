@@ -2,8 +2,8 @@
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.DeleteDataSource;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.DeleteScrapingDomain

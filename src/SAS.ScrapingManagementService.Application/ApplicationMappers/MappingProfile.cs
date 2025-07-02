@@ -8,7 +8,7 @@ using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.CreateScrapingDomain;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.UpdateScrapingDomain;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 
 namespace SAS.ScrapingManagementService.Application.Common.Mappings
 {

@@ -1,5 +1,6 @@
 ﻿using SAS.ScrapingManagementService.Application.Scrapers.Common;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
+using SAS.ScrapingManagementService.Domain.Tasks.Entities;
 
 public interface IPlatformTaskScheduler
 {

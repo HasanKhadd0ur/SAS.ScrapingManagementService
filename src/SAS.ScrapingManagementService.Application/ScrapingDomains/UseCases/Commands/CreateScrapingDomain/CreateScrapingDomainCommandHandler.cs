@@ -3,8 +3,8 @@ using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
-using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.SharedKernel.Specification;
 

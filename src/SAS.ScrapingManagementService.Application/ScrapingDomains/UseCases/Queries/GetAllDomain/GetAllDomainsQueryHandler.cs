@@ -6,7 +6,7 @@ using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Queries.GetAllDomain;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.SharedKernel.Specification;
 

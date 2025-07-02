@@ -1,7 +1,7 @@
-﻿using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+﻿using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 
-namespace SAS.ScrapingManagementService.Domain.Scrapers.Repositories
+namespace SAS.ScrapingManagementService.Domain.ScrapingDomains.Repositories
 {
     public interface IScrapingDomainRepository : IRepository<ScrapingDomain, Guid>
     {

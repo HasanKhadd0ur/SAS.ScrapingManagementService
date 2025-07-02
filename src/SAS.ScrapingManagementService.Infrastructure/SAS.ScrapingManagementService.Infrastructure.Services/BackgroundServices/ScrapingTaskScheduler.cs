@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
 using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices;
 using SAS.ScrapingManagementService.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.SharedKernel.Specification;

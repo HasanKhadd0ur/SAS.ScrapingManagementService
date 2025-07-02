@@ -1,0 +1,9 @@
+﻿using SAS.ScrapingManagementService.SharedKernel.DomainErrors;
+
+namespace SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
+
+public static class DataSourceTypeErrors
+{
+    public static readonly DomainError UnExistType =
+         new("DataSourceTypeError.UnExistType", "Data Source Type un exist.");
+}

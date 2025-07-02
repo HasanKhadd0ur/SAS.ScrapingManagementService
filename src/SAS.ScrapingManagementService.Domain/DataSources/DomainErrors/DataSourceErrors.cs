@@ -6,5 +6,4 @@ public static class DataSourceErrors
 {
     public static readonly DomainError UnExistDataSource=
          new("DataSourceError.UnExistDataSource", "Data Source un exist.");
-
 }

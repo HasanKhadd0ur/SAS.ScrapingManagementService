@@ -1,6 +1,6 @@
 ﻿using SAS.ScrapingManagementService.SharedKernel.DomainErrors;
 
-namespace SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
+namespace SAS.ScrapingManagementService.Domain.Tasks.DomainErrors;
 
 public static class ScrapingTaskErrors
 {

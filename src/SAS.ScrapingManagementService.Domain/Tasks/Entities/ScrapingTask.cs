@@ -1,7 +1,8 @@
 ﻿using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.SharedKernel.Entities;
 
-namespace SAS.ScrapingManagementService.Domain.Scrapers.Entities
+namespace SAS.ScrapingManagementService.Domain.Tasks.Entities
 {
     public class ScrapingTask : BaseEntity<Guid>
     {

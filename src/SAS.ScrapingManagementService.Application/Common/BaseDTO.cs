@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Application.Common
+namespace SAS.ScrapingManagementService.Application.Common
 {
     public class BaseDTO<T>
     {

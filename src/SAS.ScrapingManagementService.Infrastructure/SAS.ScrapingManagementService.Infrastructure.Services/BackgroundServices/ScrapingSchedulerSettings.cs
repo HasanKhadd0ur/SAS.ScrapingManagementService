@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices
+namespace SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices
 {
     public class ScrapingSchedulerSettings
     {

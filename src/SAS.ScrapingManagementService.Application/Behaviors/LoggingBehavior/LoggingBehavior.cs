@@ -1,6 +1,6 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.Extensions.Logging;
-using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
+using SAS.SharedKernel.CQRS.Commands;
 
 namespace SAS.ScrapingManagementService.Application.Behaviors.LoggingBehavior
 {

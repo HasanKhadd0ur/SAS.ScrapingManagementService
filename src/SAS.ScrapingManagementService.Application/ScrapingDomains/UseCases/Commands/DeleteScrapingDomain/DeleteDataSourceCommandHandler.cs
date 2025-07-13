@@ -1,10 +1,10 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.DeleteDataSource;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
+using SAS.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.DeleteScrapingDomain
 {

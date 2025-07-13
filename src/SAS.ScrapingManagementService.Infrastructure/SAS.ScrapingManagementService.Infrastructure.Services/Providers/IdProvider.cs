@@ -1,4 +1,4 @@
-﻿using SAS.ScrapingManagementService.Application.Contracts.Providers;
+using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using System.Security.Cryptography;
 using System.Text;
 

@@ -1,10 +1,11 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries
 {
@@ -23,7 +24,13 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries
 
         public async Task<Result<DataSourceDto>> Handle(GetDataSourceByIdQuery request, CancellationToken cancellationToken)
         {
-            var dataSource = await _dataSourceRepo.GetByIdAsync(request.Id);
+            // Build spec inline
+            var spec = new BaseSpecification<DataSource>();
+            spec.AddInclude(ds => ds.Platform);
+            spec.AddInclude(ds => ds.Domain);
+            spec.AddInclude(ds => ds.DataSourceType);
+
+            var dataSource = await _dataSourceRepo.GetByIdAsync(request.Id,spec);
 
             if (dataSource is null)
                 return Result.Invalid(DataSourceErrors.UnExistDataSource);

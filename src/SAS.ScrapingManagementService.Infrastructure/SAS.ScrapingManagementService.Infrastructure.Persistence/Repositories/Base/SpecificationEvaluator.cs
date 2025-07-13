@@ -1,7 +1,7 @@
-﻿
+
 using Microsoft.EntityFrameworkCore;
-using SAS.ScrapingManagementService.SharedKernel.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Utilities;
+using SAS.SharedKernel.Entities;
+using SAS.SharedKernel.Utilities;
 
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base

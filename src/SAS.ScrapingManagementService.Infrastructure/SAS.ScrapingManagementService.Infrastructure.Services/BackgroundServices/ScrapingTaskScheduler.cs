@@ -1,14 +1,14 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
 using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask;
-using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 public partial class ScrapingTaskSchedulerService : BackgroundService
 {
@@ -35,56 +35,62 @@ public partial class ScrapingTaskSchedulerService : BackgroundService
         {
             try
             {
-                await RunSchedulingLogic(stoppingToken);
+                var now = DateTime.Now;
+
+                if (_settings.RunAtTimes?.Any() == true)
+                {
+                    // Parse scheduled times for today
+                    var runTimes = _settings.RunAtTimes
+                        .Select(t => DateTime.Today.Add(TimeSpan.Parse(t)))
+                        .OrderBy(t => t)
+                        .ToList();
+
+                    // Find next run time after now
+                    var nextRun = runTimes.FirstOrDefault(t => t > now);
+
+                    if (nextRun == default)
+                    {
+                        // All today's run times passed, schedule earliest tomorrow
+                        nextRun = runTimes.First().AddDays(1);
+                    }
+
+                    var timeToNextRun = nextRun - now;
+
+                    // Check if current time is within 1 minute of any run time
+                    var isOnSchedule = runTimes.Any(t => Math.Abs((t - now).TotalMinutes) < 1);
+
+                    if (isOnSchedule)
+                    {
+                        _logger.LogInformation("Running scheduled scraping tasks at {Now}", now);
+                        await RunSchedulingLogic(stoppingToken);
+
+                        // Sleep at least 1 minute to avoid rerunning multiple times within the minute
+                        await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                    }
+                    else
+                    {
+                        _logger.LogInformation("Not scheduled time yet. Sleeping until next run at {NextRun}", nextRun);
+                        await Task.Delay(timeToNextRun, stoppingToken);
+                    }
+                }
+                else
+                {
+                    // No scheduled times configured, run at fixed interval
+                    _logger.LogInformation("No scheduled run times configured, running immediately and delaying for {Interval} minutes", _settings.IntervalMinutes);
+                    await RunSchedulingLogic(stoppingToken);
+
+                    await Task.Delay(TimeSpan.FromMinutes(_settings.IntervalMinutes), stoppingToken);
+                }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while scheduling scraping tasks");
-            }
-
-            if (_settings.RunAtTimes?.Any() == true)
-            {
-                var now = DateTime.Now;
-
-                // Parse run times to today's datetime and then tomorrow if already passed
-                var runTimes = _settings.RunAtTimes
-                    .Select(t => DateTime.Today.Add(TimeSpan.Parse(t)))
-                    .OrderBy(t => t)
-                    .ToList();
-
-                // Find the next scheduled time after now
-                var nextRun = runTimes.FirstOrDefault(t => t > now);
-
-                if (nextRun == default)
-                {
-                    // All times passed today, pick the earliest one tomorrow
-                    nextRun = runTimes.First().AddDays(1);
-                }
-
-                var timeToNextRun = nextRun - now;
-
-                // Check if now is close to any scheduled time (within some threshold, e.g. 1 minute)
-                var isOnSchedule = runTimes.Any(t => Math.Abs((t - now).TotalMinutes) < 1);
-
-                if (!isOnSchedule)
-                {
-                    // If not exactly on scheduled time, run immediately next loop
-                    _logger.LogInformation("Current time not on schedule, running immediately.");
-                    await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
-                }
-                else
-                {
-                    _logger.LogInformation("Next scheduled run at {NextRun}", nextRun);
-                    await Task.Delay(timeToNextRun, stoppingToken);
-                }
-            }
-            else
-            {
-                // No runAtTimes configured - just delay interval minutes
-                await Task.Delay(TimeSpan.FromMinutes(_settings.IntervalMinutes), stoppingToken);
+                // Avoid tight failure loop: delay before retrying
+                await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
         }
     }
+
     private async Task RunSchedulingLogic(CancellationToken stoppingToken)
     {
         using var scope = _provider.CreateScope();
@@ -117,10 +123,9 @@ public partial class ScrapingTaskSchedulerService : BackgroundService
                     };
 
                     var result = await mediator.Send(cmd, stoppingToken);
-                    Console.WriteLine(result);
+                    _logger.LogInformation("Created scraping task with result: {Result}", result);
                 }
             }
         }
     }
-
 }

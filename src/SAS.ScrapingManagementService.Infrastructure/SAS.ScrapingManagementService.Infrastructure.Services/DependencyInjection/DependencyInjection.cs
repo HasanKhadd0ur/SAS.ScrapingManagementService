@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices;
 using SAS.ScrapingManagementService.Infrastructure.Services.Providers;

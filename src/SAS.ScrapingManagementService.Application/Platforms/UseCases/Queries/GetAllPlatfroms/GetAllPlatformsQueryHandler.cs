@@ -1,11 +1,11 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Platforms.Common;
 using SAS.ScrapingManagementService.Application.Platforms.UseCases.Queries.GetAllPlatfroms;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 public  class GetAllPlatformsQueryHandler : IRequestHandler<GetAllPlatformsQuery, Result<IEnumerable<PlatformDto>>>
 {

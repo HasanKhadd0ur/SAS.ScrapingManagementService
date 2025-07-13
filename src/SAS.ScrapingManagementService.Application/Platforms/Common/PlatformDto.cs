@@ -1,11 +1,11 @@
-﻿using SAS.ScrapingManagementService.Application.Common;
+    using SAS.ScrapingManagementService.Application.Common;
 
-namespace SAS.ScrapingManagementService.Application.Platforms.Common
-{
-    public class PlatformDto : BaseDTO<Guid>
+    namespace SAS.ScrapingManagementService.Application.Platforms.Common
     {
-        public string Name { get; set; } = default!;
-        public string Description { get; set; }
+        public class PlatformDto : BaseDTO<Guid>
+        {
+            public string Name { get; set; } = default!;
+            public string Description { get; set; }
 
+        }
     }
-}

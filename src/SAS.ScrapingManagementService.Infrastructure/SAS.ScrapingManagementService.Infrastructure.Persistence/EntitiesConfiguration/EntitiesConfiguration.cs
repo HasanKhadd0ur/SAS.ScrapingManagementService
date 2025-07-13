@@ -1,10 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
+using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
+using SAS.ScrapingManagementService.Domain.Tasks.Entities;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfiguration
 {
+    public class DataSourceTypeConfiguration : IEntityTypeConfiguration<DataSourceType>
+    {
+        public void Configure(EntityTypeBuilder<DataSourceType> builder)
+        {
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(100);
+        }
+    }
+
     public class DataSourceConfiguration : IEntityTypeConfiguration<DataSource>
     {
         public void Configure(EntityTypeBuilder<DataSource> builder)
@@ -21,6 +35,11 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfi
             builder.HasOne(e => e.Platform)
                 .WithMany()
                 .HasForeignKey(e => e.PlatformId)
+                .OnDelete(DeleteBehavior.Restrict);
+            
+            builder.HasOne(e => e.DataSourceType)
+                .WithMany()
+                .HasForeignKey(e => e.DataSourceTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(e => e.Domain)

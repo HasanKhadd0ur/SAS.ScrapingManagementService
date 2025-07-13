@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Application.Contracts.Providers
+namespace SAS.ScrapingManagementService.Application.Contracts.Providers
 {
     public interface IDateTimeProvider
     {

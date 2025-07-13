@@ -1,7 +1,7 @@
-﻿using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Entities;
+using SAS.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Domain.Tasks.Entities
 {

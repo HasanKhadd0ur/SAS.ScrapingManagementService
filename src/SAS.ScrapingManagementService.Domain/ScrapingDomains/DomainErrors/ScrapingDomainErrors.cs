@@ -1,4 +1,4 @@
-﻿using SAS.ScrapingManagementService.SharedKernel.DomainErrors;
+using SAS.SharedKernel.DomainErrors;
 
 namespace SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 

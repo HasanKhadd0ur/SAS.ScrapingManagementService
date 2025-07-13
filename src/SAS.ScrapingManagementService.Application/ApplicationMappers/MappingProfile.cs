@@ -1,4 +1,4 @@
-﻿// Application/Common/Mappings/MappingProfile.cs
+// Application/Common/Mappings/MappingProfile.cs
 using AutoMapper;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.AddDataSource;

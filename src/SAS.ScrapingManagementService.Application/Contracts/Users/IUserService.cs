@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Application.Contracts.Users
+namespace SAS.ScrapingManagementService.Application.Contracts.Users
 {
     public interface IUserService
     {

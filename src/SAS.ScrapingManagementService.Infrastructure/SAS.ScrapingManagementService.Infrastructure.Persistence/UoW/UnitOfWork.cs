@@ -1,8 +1,8 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.EntityFrameworkCore.Storage;
-using SAS.ScrapingManagementService.SharedKernel.DomainEvents;
-using SAS.ScrapingManagementService.SharedKernel.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Utilities;
+using SAS.SharedKernel.DomainEvents;
+using SAS.SharedKernel.Entities;
+using SAS.SharedKernel.Utilities;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.UoW

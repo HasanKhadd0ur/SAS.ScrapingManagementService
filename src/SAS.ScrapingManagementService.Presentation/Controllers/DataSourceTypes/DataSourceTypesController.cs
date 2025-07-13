@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SAS.ScrapingManagementService.Application.DataSourceTypes.UseCases.Commands.AddDataSourceType;
 using SAS.ScrapingManagementService.Application.DataSourceTypes.UseCases.Queries.GetAllDataSourceTypes;

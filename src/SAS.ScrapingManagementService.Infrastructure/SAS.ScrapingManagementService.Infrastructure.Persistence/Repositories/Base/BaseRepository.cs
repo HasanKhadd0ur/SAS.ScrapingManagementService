@@ -1,11 +1,11 @@
-﻿
+
 using EFCore.BulkExtensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
-using SAS.ScrapingManagementService.SharedKernel.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Utilities;
+using SAS.SharedKernel.Entities;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Utilities;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base
 {

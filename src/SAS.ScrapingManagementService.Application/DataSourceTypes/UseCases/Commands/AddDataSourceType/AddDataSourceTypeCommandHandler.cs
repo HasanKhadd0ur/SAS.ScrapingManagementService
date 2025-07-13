@@ -1,10 +1,10 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Application.DataSourceTypes.UseCases.Commands.AddDataSourceType
 {

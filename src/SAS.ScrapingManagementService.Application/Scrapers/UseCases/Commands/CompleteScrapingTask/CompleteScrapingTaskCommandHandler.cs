@@ -1,6 +1,6 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using MediatR;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.Tasks.Entities;
 using SAS.ScrapingManagementService.Domain.Tasks.DomainErrors;

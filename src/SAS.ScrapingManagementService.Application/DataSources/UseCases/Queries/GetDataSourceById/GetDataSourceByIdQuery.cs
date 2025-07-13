@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries

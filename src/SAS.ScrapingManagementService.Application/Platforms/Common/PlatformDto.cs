@@ -1,4 +1,4 @@
-﻿    using SAS.ScrapingManagementService.Application.Common;
+    using SAS.ScrapingManagementService.Application.Common;
 
     namespace SAS.ScrapingManagementService.Application.Platforms.Common
     {

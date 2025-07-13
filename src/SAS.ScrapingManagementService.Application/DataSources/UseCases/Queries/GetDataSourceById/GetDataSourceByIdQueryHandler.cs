@@ -1,11 +1,11 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries
 {

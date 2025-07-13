@@ -1,12 +1,12 @@
-﻿using Ardalis.Result;
+using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.CreateScrapingDomain
 {

@@ -1,4 +1,4 @@
-﻿using System.Security.Claims;
+using System.Security.Claims;
 
 namespace SAS.ScrapingManagementService.Application.Contracts.Users
 {

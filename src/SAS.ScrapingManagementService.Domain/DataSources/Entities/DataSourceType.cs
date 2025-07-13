@@ -1,4 +1,4 @@
-﻿using SAS.ScrapingManagementService.SharedKernel.Entities;
+using SAS.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Domain.DataSources.Entities
 {

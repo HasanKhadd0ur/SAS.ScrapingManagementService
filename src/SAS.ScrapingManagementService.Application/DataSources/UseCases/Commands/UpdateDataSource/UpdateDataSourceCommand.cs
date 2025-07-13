@@ -1,5 +1,5 @@
-﻿using Ardalis.Result;
-using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
+using Ardalis.Result;
+using SAS.SharedKernel.CQRS.Commands;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.UpdateDataSource
 {

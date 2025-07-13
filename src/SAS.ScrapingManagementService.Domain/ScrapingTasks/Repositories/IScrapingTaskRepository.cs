@@ -1,5 +1,5 @@
-﻿using SAS.ScrapingManagementService.Domain.Tasks.Entities;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
+using SAS.ScrapingManagementService.Domain.Tasks.Entities;
+using SAS.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Domain.Tasks.Repositories
 {

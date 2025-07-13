@@ -1,6 +1,6 @@
-﻿using SAS.ScrapingManagementService.Application.Common;
+using SAS.ScrapingManagementService.Application.Common;
 using SAS.ScrapingManagementService.Application.DataSourceTypes.Common;
-using SAS.ScrapingManagementService.SharedKernel.Entities;
+using SAS.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.Common
 {

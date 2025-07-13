@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
 

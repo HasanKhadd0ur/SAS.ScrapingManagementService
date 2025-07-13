@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
@@ -6,8 +6,8 @@ using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSources;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.UoW;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Utilities;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Utilities;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.DependencyInjection
 {

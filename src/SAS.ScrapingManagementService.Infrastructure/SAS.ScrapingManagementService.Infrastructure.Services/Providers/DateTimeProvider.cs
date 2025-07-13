@@ -1,4 +1,4 @@
-﻿using SAS.ScrapingManagementService.Application.Contracts.Providers;
+using SAS.ScrapingManagementService.Application.Contracts.Providers;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Services.Providers
 {

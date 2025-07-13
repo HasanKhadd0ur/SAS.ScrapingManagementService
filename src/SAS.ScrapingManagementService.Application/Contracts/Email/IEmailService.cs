@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Application.Contracts.Email
+namespace SAS.ScrapingManagementService.Application.Contracts.Email
 {
     public interface IEmailService
     {

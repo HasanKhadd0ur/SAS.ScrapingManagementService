@@ -6,11 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
-    <PackageReference Include="MediatR" Version="12.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
 		
 		<PackageReference Include="Ardalis.Result" Version="10.1.0" />
-		<PackageReference Include="AutoMapper" Version="14.0.0" />
+		<PackageReference Include="AutoMapper" Version="15.0.1" />
+		<PackageReference Include="SAS.SharedKernel" Version="1.0.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\SAS.ScrapingManagementService.Application\SAS.ScrapingManagementService.Application.csproj" />

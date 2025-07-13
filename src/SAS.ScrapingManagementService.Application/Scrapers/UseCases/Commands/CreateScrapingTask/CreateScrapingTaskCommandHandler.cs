@@ -1,4 +1,4 @@
-﻿
+
 using Ardalis.Result;
 using SAS.ScrapingManagementService.Application.Contracts.Messaging;
 using SAS.ScrapingManagementService.Application.DataSources.Common;
@@ -6,9 +6,9 @@ using SAS.ScrapingManagementService.Application.Scrapers.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.Tasks.Entities;
-using SAS.ScrapingManagementService.SharedKernel.CQRS.Commands;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.CQRS.Commands;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask
 {

@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.ConnectScraper;
 using SAS.ScrapingManagementService.Presentation.Controllers.ApiBase;

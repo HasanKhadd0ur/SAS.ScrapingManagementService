@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Application.Behaviors.LoggingBehavior;

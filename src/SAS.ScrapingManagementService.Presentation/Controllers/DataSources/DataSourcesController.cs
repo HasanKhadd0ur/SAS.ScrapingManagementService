@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.AddDataSource;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.DeleteDataSource;

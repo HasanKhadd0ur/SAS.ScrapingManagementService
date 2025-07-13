@@ -1,10 +1,10 @@
-﻿
+
 using Microsoft.EntityFrameworkCore;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.Tasks.Entities;
-using SAS.ScrapingManagementService.SharedKernel.DomainEvents;
+using SAS.SharedKernel.DomainEvents;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext
 {

@@ -1,4 +1,4 @@
-﻿namespace SAS.ScrapingManagementService.Application.Contracts.Scheduling
+namespace SAS.ScrapingManagementService.Application.Contracts.Scheduling
 {
     public class SchedulerOrchestrator
     {

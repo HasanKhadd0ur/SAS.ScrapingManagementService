@@ -1,8 +1,8 @@
-﻿using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSources
 {

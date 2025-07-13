@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SAS.ScrapingManagementService.Application.Platforms.UseCases.Queries.GetAllPlatfroms;
 using SAS.ScrapingManagementService.Presentation.Controllers.ApiBase;

@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -7,8 +7,8 @@ using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
 using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Infrastructure.Services.BackgroundServices;
-using SAS.ScrapingManagementService.SharedKernel.Repositories;
-using SAS.ScrapingManagementService.SharedKernel.Specification;
+using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 public partial class ScrapingTaskSchedulerService : BackgroundService
 {

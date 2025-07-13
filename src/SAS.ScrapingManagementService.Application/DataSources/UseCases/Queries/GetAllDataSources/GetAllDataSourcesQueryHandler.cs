@@ -27,6 +27,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Queries
             var spec = new BaseSpecification<DataSource>();
             spec.AddInclude(ds => ds.Platform);
             spec.AddInclude(ds => ds.Domain);
+            spec.AddInclude(ds => ds.DataSourceType);
             spec.ApplyOptionalPagination(request.PageSize, request.PageNumber);
 
             var entities = await _dataSourceRepo.ListAsync(spec);

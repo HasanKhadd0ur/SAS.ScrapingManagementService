@@ -8,8 +8,11 @@ using SAS.ScrapingManagementService.Application.Platforms.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.CreateScrapingDomain;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.UpdateScrapingDomain;
+using SAS.ScrapingManagementService.Application.Settings.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
+using SAS.ScrapingManagementService.Domain.Settings.Entities;
+using static SAS.ScrapingManagementService.Application.Settings.Common.PipelineConfigDto;
 
 namespace SAS.ScrapingManagementService.Application.Common.Mappings
 {
@@ -32,7 +35,10 @@ namespace SAS.ScrapingManagementService.Application.Common.Mappings
             
             // ============ DataSourceTypes ===========
             CreateMap<DataSourceType, DataSourceTypeDto>().ReverseMap();
-            
-        }
+         
+            CreateMap<PipelineConfig, PipelineConfigDto>().ReverseMap();
+            CreateMap<PipelineStage, PipelineStageDto>().ReverseMap();
+         
+    }
     }
 }

@@ -45,7 +45,6 @@
 	  <ProjectReference Include="..\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Persistence\SAS.ScrapingManagementService.Infrastructure.Persistence.csproj" />
 	  <ProjectReference Include="..\SAS.ScrapingManagementService.Infrastructure\SAS.ScrapingManagementService.Infrastructure.Services\SAS.ScrapingManagementService.Infrastructure.Services.csproj" />
 	  <ProjectReference Include="..\SAS.ScrapingManagementService.Presentation\SAS.ScrapingManagementService.Presentation.csproj" />
-	  <ProjectReference Include="..\SAS.ScrapingManagementService.SharedKernel\SAS.ScrapingManagementService.SharedKernel.csproj" />
 	</ItemGroup>
 
 

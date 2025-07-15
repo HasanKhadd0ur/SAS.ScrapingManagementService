@@ -4,7 +4,7 @@ using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.Assig
 using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CompleteScrapingTask;
 using SAS.ScrapingManagementService.Presentation.Controllers.ApiBase;
 
-namespace SAS.ScrapingManagementService.API.Controllers
+namespace SAS.ScrapingManagementService.Presentation.Controllers.ScrapingTasks
 {
     [ApiController]
     [Route("api/[controller]")]

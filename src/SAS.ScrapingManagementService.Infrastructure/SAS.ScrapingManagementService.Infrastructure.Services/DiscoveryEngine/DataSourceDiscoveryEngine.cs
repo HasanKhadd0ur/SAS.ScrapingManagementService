@@ -7,7 +7,7 @@ using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Repositories;
 
-public class DataSourceDiscoveryEngine
+public partial class DataSourceDiscoveryEngine
 {
     private readonly IEnumerable<IFeedbackDiscoveryStrategy> _strategies;
     private readonly IRepository<DataSource, Guid> _dataSourceRepo;

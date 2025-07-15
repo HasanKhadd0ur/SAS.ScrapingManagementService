@@ -1,3 +1,5 @@
+using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+
 namespace SAS.ScrapingManagementService.Application.Contracts.Scheduling
 {
     public class SchedulerOrchestrator
@@ -13,5 +15,6 @@ namespace SAS.ScrapingManagementService.Application.Contracts.Scheduling
         {
             return _schedulers.TryGetValue(platformName, out scheduler);
         }
+
     }
 }

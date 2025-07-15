@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\SAS.ScrapingManagementService.Domain\SAS.ScrapingManagementService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FeedBack\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
@@ -12,6 +11,6 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.
         public DataSourceRepository(AppDbContext context) : base(context)
         {
         }
-        
+
     }
 }

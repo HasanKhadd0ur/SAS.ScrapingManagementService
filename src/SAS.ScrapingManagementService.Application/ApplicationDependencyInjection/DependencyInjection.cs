@@ -5,6 +5,7 @@ using SAS.ScrapingManagementService.Application.Behaviors.LoggingBehavior;
 using SAS.ScrapingManagementService.Application.Behaviors.ValidationBehavior;
 using SAS.ScrapingManagementService.Application.Common.Mappings;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
+using SAS.ScrapingManagementService.Application.Settings.Services;
 using System.Reflection;
 
 namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjection
@@ -16,7 +17,10 @@ namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjecti
 
             services.AddMyMediatR()
                 .AddMappers();
-            
+
+            services.AddScoped<IPipelineConfigService, PipelineConfigService>();
+
+
             // Register orchestrator
             services.AddSingleton<SchedulerOrchestrator>(provider =>
             {

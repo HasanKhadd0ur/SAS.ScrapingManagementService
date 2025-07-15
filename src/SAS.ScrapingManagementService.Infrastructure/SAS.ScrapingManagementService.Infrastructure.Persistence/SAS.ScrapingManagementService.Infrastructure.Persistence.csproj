@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SAS.ScrapingManagementService.Domain\SAS.ScrapingManagementService.Domain.csproj" />
-    <ProjectReference Include="..\..\SAS.ScrapingManagementService.SharedKernel\SAS.ScrapingManagementService.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

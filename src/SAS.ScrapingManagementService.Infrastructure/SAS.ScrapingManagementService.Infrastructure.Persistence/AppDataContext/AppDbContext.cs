@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
+using SAS.ScrapingManagementService.Domain.Settings.Entities;
 using SAS.ScrapingManagementService.Domain.Tasks.Entities;
 using SAS.SharedKernel.DomainEvents;
 
@@ -23,6 +24,12 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContex
         public DbSet<Platform> Platforms { get; set; }
         public DbSet<Scraper> Scrapers { get; set; }
         public DbSet<DataSourceType> DataSourceTypes { get; set; }
+
+        public DbSet<PipelineStage> PipelineStages { get; set; }
+
+        public DbSet<PipelineConfig> PipelineConfigs { get; set; }
+
+
 
 
 

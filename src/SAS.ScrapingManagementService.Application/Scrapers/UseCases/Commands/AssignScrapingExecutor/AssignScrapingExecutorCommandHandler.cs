@@ -24,15 +24,16 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.A
         public async Task<Result> Handle(AssignScrapingExecutorCommand request, CancellationToken cancellationToken)
         {
             var task = await _taskRepository.GetByIdAsync(request.ScrapingTaskId);
-            if (task == null)
+            if (task is null)
                 return Result.Invalid(ScrapingTaskErrors.UnExistTask);
 
             var scraper = await _scraperRepository.GetByIdAsync(request.ScraperId);
-            if (scraper == null)
+            if (scraper is null)
                 return Result.Invalid(ScraperErrors.UnExistScraper);
 
             task.ScraperId = scraper.Id;
             task.ScrapingExecutor = scraper;
+            task.ScrapingExecutor.TasksHandled += 1;
 
             await _taskRepository.UpdateAsync(task);
             

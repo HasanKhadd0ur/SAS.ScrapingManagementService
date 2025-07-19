@@ -8,12 +8,13 @@ using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.Platforms.DomainErrors;
-using SAS.ScrapingManagementService.Domain.DataSourceType.Entities;
-using SAS.ScrapingManagementService.Domain.DataSourceType.DomainErrors;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.DomainErrors;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
+using SAS.SharedKernel.CQRS.Commands;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.AddDataSource
 {
-    public sealed class AddDataSourceCommandHandler : IRequestHandler<AddDataSourceCommand, Result<Guid>>
+    public sealed class AddDataSourceCommandHandler : ICommandHandler<AddDataSourceCommand, Result<Guid>>
     {
         private readonly IRepository<ScrapingDomain, Guid> _domainRepo;
         private readonly IRepository<Platform, Guid> _platformRepo;

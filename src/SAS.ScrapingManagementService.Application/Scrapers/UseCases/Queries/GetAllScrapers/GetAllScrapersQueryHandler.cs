@@ -21,6 +21,9 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Queries.Ge
 
         public async Task<Result<List<ScraperDto>>> Handle(GetAllScrapersQuery request, CancellationToken cancellationToken)
         {
+            var spec = new BaseSpecification<Scraper>();
+            spec.ApplyOptionalPagination(request.PageSize, request.PageNumber);
+
             var scrapers = await _scraperRepo.ListAsync(spec);
 
             var scraperDtos = _mapper.Map<List<ScraperDto>>(scrapers);

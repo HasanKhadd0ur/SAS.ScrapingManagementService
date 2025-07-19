@@ -1,15 +1,15 @@
-using SAS.ScrapingManagementService.Domain.DataSourceType.Entities;
-using SAS.ScrapingManagementService.Domain.DataSourceType.Repositories;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base;
 using SAS.SharedKernel.Specification;
 
-namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSources
+namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSourceTypes
 {
-    public class DataSourceTypeRepository : BaseRepository<DataSourceType, Guid>, IDataSourceTypeRepository
+    public class DataSourceTypesRepository : BaseRepository<DataSourceType, Guid>, IDataSourceTypesRepository
     {
 
-        public DataSourceTypeRepository(AppDbContext context) : base(context)
+        public DataSourceTypesRepository(AppDbContext context) : base(context)
         {
         }
 

@@ -1,7 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.DataSourceType.Entities;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
 using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;

@@ -7,6 +7,7 @@ using SAS.ScrapingManagementService.Domain.Settings.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSources;
+using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSourceTypes;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.UoW;
 using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Utilities;

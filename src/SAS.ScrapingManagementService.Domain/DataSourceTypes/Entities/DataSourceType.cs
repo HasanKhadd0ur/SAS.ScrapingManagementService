@@ -1,6 +1,6 @@
 using SAS.SharedKernel.Entities;
 
-namespace SAS.ScrapingManagementService.Domain.DataSourceType.Entities
+namespace SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities
 {
     public class DataSourceType : BaseEntity<Guid>
     {

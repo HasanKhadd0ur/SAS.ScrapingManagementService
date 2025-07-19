@@ -1,6 +1,6 @@
 using SAS.SharedKernel.DomainErrors;
 
-namespace SAS.ScrapingManagementService.Domain.DataSourceType.DomainErrors;
+namespace SAS.ScrapingManagementService.Domain.DataSourceTypes.DomainErrors;
 
 public static class DataSourceTypeErrors
 {

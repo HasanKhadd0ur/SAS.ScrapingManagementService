@@ -1,7 +1,6 @@
-using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.SharedKernel.Repositories;
 
-namespace SAS.ScrapingManagementService.Domain.DataSources.Repositories
+namespace SAS.ScrapingManagementService.Domain.DataSourceType.Repositories
 {
     public interface IDataSourceTypeRepository : IRepository<DataSourceType, Guid>
     {

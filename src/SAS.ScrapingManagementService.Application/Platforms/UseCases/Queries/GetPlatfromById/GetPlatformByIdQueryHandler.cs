@@ -2,7 +2,7 @@ using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Platforms.Common;
-using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
+using SAS.ScrapingManagementService.Domain.Platforms.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.SharedKernel.Repositories;
 

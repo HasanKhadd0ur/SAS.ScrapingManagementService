@@ -2,7 +2,7 @@ using Ardalis.Result;
 using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSourceTypes.Common;
-using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.DataSourceType.Entities;
 using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Specification;
 

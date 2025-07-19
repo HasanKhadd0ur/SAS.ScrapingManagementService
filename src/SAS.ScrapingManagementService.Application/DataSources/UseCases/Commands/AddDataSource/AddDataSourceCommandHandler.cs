@@ -1,13 +1,15 @@
 using Ardalis.Result;
 using AutoMapper;
 using MediatR;
-using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Platforms.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.DomainErrors;
+using SAS.ScrapingManagementService.Domain.DataSourceType.Entities;
+using SAS.ScrapingManagementService.Domain.DataSourceType.DomainErrors;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.AddDataSource
 {

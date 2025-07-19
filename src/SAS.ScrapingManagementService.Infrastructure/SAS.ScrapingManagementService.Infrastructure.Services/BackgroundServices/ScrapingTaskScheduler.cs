@@ -36,60 +36,43 @@ public partial class ScrapingTaskSchedulerService : BackgroundService
             try
             {
                 var now = DateTime.Now;
+                bool shouldRun = false;
 
+                // Check if now matches any configured RunAtTimes (like "03:00", "15:45", etc.)
                 if (_settings.RunAtTimes?.Any() == true)
                 {
-                    // Parse scheduled times for today
-                    var runTimes = _settings.RunAtTimes
-                        .Select(t => DateTime.Today.Add(TimeSpan.Parse(t)))
-                        .OrderBy(t => t)
-                        .ToList();
+                    shouldRun = _settings.RunAtTimes
+                        .Select(t => TimeSpan.Parse(t))
+                        .Any(ts => Math.Abs((now.TimeOfDay - ts).TotalMinutes) < 1);
+                }
 
-                    // Find next run time after now
-                    var nextRun = runTimes.FirstOrDefault(t => t > now);
+                // Always run per interval (default: every minute)
+                if (_settings.IntervalMinutes > 0 && now.Minute % _settings.IntervalMinutes == 0)
+                {
+                    shouldRun = true;
+                }
 
-                    if (nextRun == default)
-                    {
-                        // All today's run times passed, schedule earliest tomorrow
-                        nextRun = runTimes.First().AddDays(1);
-                    }
-
-                    var timeToNextRun = nextRun - now;
-
-                    // Check if current time is within 1 minute of any run time
-                    var isOnSchedule = runTimes.Any(t => Math.Abs((t - now).TotalMinutes) < 1);
-
-                    if (isOnSchedule)
-                    {
-                        _logger.LogInformation("Running scheduled scraping tasks at {Now}", now);
-                        await RunSchedulingLogic(stoppingToken);
-
-                        // Sleep at least 1 minute to avoid rerunning multiple times within the minute
-                        await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
-                    }
-                    else
-                    {
-                        _logger.LogInformation("Not scheduled time yet. Sleeping until next run at {NextRun}", nextRun);
-                        await Task.Delay(timeToNextRun, stoppingToken);
-                    }
+                if (shouldRun)
+                {
+                    _logger.LogInformation("Running scheduled scraping tasks at {Now}", now);
+                    await RunSchedulingLogic(stoppingToken);
                 }
                 else
                 {
-                    // No scheduled times configured, run at fixed interval
-                    _logger.LogInformation("No scheduled run times configured, running immediately and delaying for {Interval} minutes", _settings.IntervalMinutes);
-                    await RunSchedulingLogic(stoppingToken);
-
-                    await Task.Delay(TimeSpan.FromMinutes(_settings.IntervalMinutes), stoppingToken);
+                    _logger.LogInformation("No run triggered at {Now}", now);
                 }
+
+                // Wait for 1 minute or configured interval
+                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while scheduling scraping tasks");
-                // Avoid tight failure loop: delay before retrying
                 await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
             }
         }
     }
+
 
     private async Task RunSchedulingLogic(CancellationToken stoppingToken)
     {
@@ -99,6 +82,7 @@ public partial class ScrapingTaskSchedulerService : BackgroundService
         var spec = new BaseSpecification<ScrapingDomain>();
         spec.AddInclude(e => e.DataSources);
         spec.IncludeStrings.Add("DataSources.Platform");
+        spec.IncludeStrings.Add("DataSources.DataSourceType");
         var domains = await domainRepo.ListAsync(spec);
 
         foreach (var domain in domains)

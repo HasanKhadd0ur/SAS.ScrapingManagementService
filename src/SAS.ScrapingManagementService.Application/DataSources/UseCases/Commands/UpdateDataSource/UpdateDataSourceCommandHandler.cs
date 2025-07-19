@@ -3,6 +3,7 @@ using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Repositories;

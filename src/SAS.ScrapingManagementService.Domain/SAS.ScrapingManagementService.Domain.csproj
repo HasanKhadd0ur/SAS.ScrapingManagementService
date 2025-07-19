@@ -10,7 +10,4 @@
     <PackageReference Include="SAS.SharedKernel" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
 </Project>

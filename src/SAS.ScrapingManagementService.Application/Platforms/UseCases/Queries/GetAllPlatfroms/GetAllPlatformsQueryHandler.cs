@@ -3,7 +3,7 @@ using AutoMapper;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Platforms.Common;
 using SAS.ScrapingManagementService.Application.Platforms.UseCases.Queries.GetAllPlatfroms;
-using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Specification;
 

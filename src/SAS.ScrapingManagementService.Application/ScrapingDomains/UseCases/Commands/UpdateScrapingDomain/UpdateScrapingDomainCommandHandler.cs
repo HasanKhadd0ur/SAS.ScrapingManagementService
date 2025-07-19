@@ -4,6 +4,7 @@ using Confluent.Kafka.Admin;
 using MediatR;
 using SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.UpdateDataSource;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Repositories;

@@ -10,6 +10,7 @@ using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Command
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Commands.UpdateScrapingDomain;
 using SAS.ScrapingManagementService.Application.Settings.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.Settings.Entities;
 using static SAS.ScrapingManagementService.Application.Settings.Common.PipelineConfigDto;

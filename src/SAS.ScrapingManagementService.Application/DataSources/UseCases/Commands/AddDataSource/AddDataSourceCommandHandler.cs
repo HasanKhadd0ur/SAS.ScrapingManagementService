@@ -7,6 +7,7 @@ using SAS.SharedKernel.Repositories;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.UseCases.Commands.AddDataSource
 {

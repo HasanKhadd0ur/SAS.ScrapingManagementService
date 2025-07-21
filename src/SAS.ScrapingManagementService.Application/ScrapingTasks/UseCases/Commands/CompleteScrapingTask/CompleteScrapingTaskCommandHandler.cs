@@ -7,7 +7,7 @@ using SAS.ScrapingManagementService.Domain.Tasks.DomainErrors;
 using SAS.SharedKernel.Specification;
 using SAS.ScrapingManagementService.Domain.Scrapers.DomainErrors;
 
-namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CompleteScrapingTask
+namespace SAS.ScrapingManagementService.Application.ScrapingTasks.UseCases.Commands.CompleteScrapingTask
 {
     public class CompleteScrapingTaskCommandHandler : IRequestHandler<CompleteScrapingTaskCommand, Result>
     {

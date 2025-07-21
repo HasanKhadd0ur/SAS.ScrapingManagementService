@@ -2,7 +2,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using SAS.ScrapingManagementService.Application.Contracts.FeedBack;
 using SAS.ScrapingManagementService.Application.Contracts.Scheduling;
-using SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask;
+using SAS.ScrapingManagementService.Application.ScrapingTasks.UseCases.Commands.CreateScrapingTask;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Repositories;

@@ -33,7 +33,7 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.C
             if (existingScraper is not null)
             {
                 existingScraper.IsActive = true;
-                existingScraper.RegisteredAt = _dateTimeProvider.UtcNow;
+                //existingScraper.RegisteredAt = _dateTimeProvider.UtcNow;
                 existingScraper.ScraperName = request.ScraperName;
 
                 await _scraperRepository.UpdateAsync(existingScraper);

@@ -6,6 +6,7 @@ using SAS.ScrapingManagementService.Domain.Settings.DomainErrors;
 using SAS.ScrapingManagementService.Domain.Settings.Entities;
 using SAS.ScrapingManagementService.Domain.Settings.Repositories;
 using SAS.SharedKernel.DomainErrors;
+using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Specification;
 using static SAS.ScrapingManagementService.Application.Settings.Common.PipelineConfigDto;
 
@@ -119,4 +120,25 @@ namespace SAS.ScrapingManagementService.Application.Settings.Services
             return Result.Success();
         }
     }
+    public class BlockedTermsService : IBlockedTermsService
+    {
+        private readonly IRepository<BlockedTerm,Guid> _repository;
+        private readonly IMapper _mapper;
+
+        public BlockedTermsService(IRepository<BlockedTerm, Guid> repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        public async Task<Result<List<BlockedTermDto>>> GetAllTermsAsync()
+        {
+            var spec = new BaseSpecification<BlockedTerm>();
+            var terms = await _repository.ListAsync(spec);
+
+            var dtoList = _mapper.Map<List<BlockedTermDto>>(terms);
+            return Result.Success(dtoList);
+        }
+    }
+
 }

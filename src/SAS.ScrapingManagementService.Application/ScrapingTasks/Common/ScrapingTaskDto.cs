@@ -1,4 +1,5 @@
 using SAS.ScrapingManagementService.Application.Common;
+using SAS.ScrapingManagementService.Application.DataSources.Common;
 using SAS.ScrapingManagementService.Application.ScrapingDomains.Common;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
@@ -15,7 +16,7 @@ namespace SAS.ScrapingManagementService.Application.ScrapingTasks.Common
             public Scraper? ScrapingExecutor { get; set; }
             public Guid DomainId { get; set; }
             public ScrapingDomainDto Domain { get; set; }
-            public ICollection<DataSource> DataSources { get; set; }
+            public ICollection<DataSourceDto> DataSources { get; set; }
         }
 
 }

@@ -13,13 +13,10 @@ namespace SAS.ScrapingManagementService.API.Controllers
     public class ScrapersController : APIController
     {
         private readonly IMediator _mediator;
-        private readonly IBlockedTermsService _blockedTermService;
-
-
-        public ScrapersController(IMediator mediator, IBlockedTermsService blockedTermService)
+        
+        public ScrapersController(IMediator mediator)
         {
             _mediator = mediator;
-            _blockedTermService = blockedTermService;
         }
 
         [HttpGet]
@@ -37,12 +34,5 @@ namespace SAS.ScrapingManagementService.API.Controllers
             return HandleResult(result);
         }
 
-        [HttpGet("BlockedTerems")]
-        public async Task<IActionResult> GetBlockedTerms()
-        {
-            var result = await _blockedTermService.GetAllTermsAsync();
-            return HandleResult(result);
-
-        }
     }
 }

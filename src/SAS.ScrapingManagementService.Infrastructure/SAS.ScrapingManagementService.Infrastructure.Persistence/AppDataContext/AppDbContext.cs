@@ -30,6 +30,7 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContex
         public DbSet<PipelineStage> PipelineStages { get; set; }
 
         public DbSet<PipelineConfig> PipelineConfigs { get; set; }
+        public DbSet<BlockedTerm> BlockedTerms { get; set; }
 
 
 

@@ -16,9 +16,5 @@ namespace SAS.ScrapingManagementService.Application.Settings.Services
 
 
     }
-    public interface IBlockedTermsService
-    {
-        Task<Result<List<BlockedTermDto>>> GetAllTermsAsync();
-    }
 
 }

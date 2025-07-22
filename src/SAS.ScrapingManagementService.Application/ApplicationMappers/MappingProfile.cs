@@ -48,6 +48,7 @@ namespace SAS.ScrapingManagementService.Application.Common.Mappings
             CreateMap<Scraper, ScraperDto>().ReverseMap();
 
             CreateMap<ScrapingTask, ScrapingTaskDto>().ReverseMap();
+            CreateMap<BlockedTerm, BlockedTermDto>().ReverseMap();
         }
     }
 }

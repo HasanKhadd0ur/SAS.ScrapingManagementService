@@ -19,6 +19,8 @@ namespace SAS.ScrapingManagementService.Application.ApplicationDependencyInjecti
                 .AddMappers();
 
             services.AddScoped<IPipelineConfigService, PipelineConfigService>();
+            services.AddScoped<IBlockedTermsService, BlockedTermsService>();
+
 
 
             // Register orchestrator

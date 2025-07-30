@@ -7,7 +7,7 @@ using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Command
 using SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Queries.GetAllDomain;
 using SAS.ScrapingManagementService.Presentation.Controllers.ApiBase;
 
-namespace SAS.ScrapingManagementService.API.Controllers
+namespace SAS.ScrapingManagementService.Presentation.Controllers.ScrapingDomains
 {
     [ApiController]
     [Route("api/[controller]")]

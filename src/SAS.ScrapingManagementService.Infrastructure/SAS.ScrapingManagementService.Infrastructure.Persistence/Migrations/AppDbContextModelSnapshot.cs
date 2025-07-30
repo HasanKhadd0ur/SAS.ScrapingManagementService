@@ -23,6 +23,22 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities.DataSourceType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DataSourceTypes");
+                });
+
             modelBuilder.Entity("SAS.ScrapingManagementService.Domain.DataSources.Entities.DataSource", b =>
                 {
                     b.Property<Guid>("Id")
@@ -43,9 +59,6 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("PlatformId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ScrapingTaskId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Target")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -59,28 +72,10 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("PlatformId");
 
-                    b.HasIndex("ScrapingTaskId");
-
                     b.ToTable("DataSources");
                 });
 
-            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.DataSources.Entities.DataSourceType", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DataSourceTypes");
-                });
-
-            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.DataSources.Entities.Platform", b =>
+            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.Platforms.Entities.Platform", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -176,6 +171,21 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
                     b.ToTable("ScrapingDomains");
                 });
 
+            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.Settings.Entities.BlockedTerm", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Term")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlockedTerms");
+                });
+
             modelBuilder.Entity("SAS.ScrapingManagementService.Domain.Settings.Entities.PipelineConfig", b =>
                 {
                     b.Property<Guid>("Id")
@@ -249,9 +259,24 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
                     b.ToTable("ScrapingTasks");
                 });
 
+            modelBuilder.Entity("ScrapingTaskDataSource", b =>
+                {
+                    b.Property<Guid>("ScrapingTaskId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DataSourceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ScrapingTaskId", "DataSourceId");
+
+                    b.HasIndex("DataSourceId");
+
+                    b.ToTable("ScrapingTaskDataSources", (string)null);
+                });
+
             modelBuilder.Entity("SAS.ScrapingManagementService.Domain.DataSources.Entities.DataSource", b =>
                 {
-                    b.HasOne("SAS.ScrapingManagementService.Domain.DataSources.Entities.DataSourceType", "DataSourceType")
+                    b.HasOne("SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities.DataSourceType", "DataSourceType")
                         .WithMany()
                         .HasForeignKey("DataSourceTypeId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -263,15 +288,11 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SAS.ScrapingManagementService.Domain.DataSources.Entities.Platform", "Platform")
+                    b.HasOne("SAS.ScrapingManagementService.Domain.Platforms.Entities.Platform", "Platform")
                         .WithMany()
                         .HasForeignKey("PlatformId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("SAS.ScrapingManagementService.Domain.Tasks.Entities.ScrapingTask", null)
-                        .WithMany("DataSources")
-                        .HasForeignKey("ScrapingTaskId");
 
                     b.Navigation("DataSourceType");
 
@@ -309,6 +330,21 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
                     b.Navigation("ScrapingExecutor");
                 });
 
+            modelBuilder.Entity("ScrapingTaskDataSource", b =>
+                {
+                    b.HasOne("SAS.ScrapingManagementService.Domain.DataSources.Entities.DataSource", null)
+                        .WithMany()
+                        .HasForeignKey("DataSourceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SAS.ScrapingManagementService.Domain.Tasks.Entities.ScrapingTask", null)
+                        .WithMany()
+                        .HasForeignKey("ScrapingTaskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities.ScrapingDomain", b =>
                 {
                     b.Navigation("DataSources");
@@ -317,11 +353,6 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("SAS.ScrapingManagementService.Domain.Settings.Entities.PipelineConfig", b =>
                 {
                     b.Navigation("Stages");
-                });
-
-            modelBuilder.Entity("SAS.ScrapingManagementService.Domain.Tasks.Entities.ScrapingTask", b =>
-                {
-                    b.Navigation("DataSources");
                 });
 #pragma warning restore 612, 618
         }

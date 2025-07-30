@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SAS.ScrapingManagementService.Domain.DataSources.Entities;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.Scrapers.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.ScrapingManagementService.Domain.Tasks.Entities;
@@ -151,9 +153,29 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfi
                 .HasForeignKey(e => e.DomainId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasMany(t => t.DataSources)
-                .WithOne();
-        }
+            
+            builder
+                .HasMany(t => t.DataSources)
+                .WithMany()
+                .UsingEntity<Dictionary<string, object>>(
+                    "ScrapingTaskDataSource",
+                    j => j
+                        .HasOne<DataSource>()
+                        .WithMany()
+                        .HasForeignKey("DataSourceId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j => j
+                        .HasOne<ScrapingTask>()
+                        .WithMany()
+                        .HasForeignKey("ScrapingTaskId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j =>
+                    {
+                        j.HasKey("ScrapingTaskId", "DataSourceId");
+                        j.ToTable("ScrapingTaskDataSources");
+                    });
+
+                    }
     }
 
 }

@@ -1,4 +1,5 @@
 using SAS.ScrapingManagementService.Application.DataSources.Common;
+using SAS.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Application.Scrapers.Common
 {
@@ -17,4 +18,5 @@ namespace SAS.ScrapingManagementService.Application.Scrapers.Common
         public string Platform { get; set; } = "Twitter";
         public string Name { get; set; } = "TwitterKeywordScraper";
     }
+
 }

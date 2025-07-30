@@ -2,10 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Repositories;
 using SAS.ScrapingManagementService.Domain.Settings.Repositories;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.AppDataContext;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.Base;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSources;
+using SAS.ScrapingManagementService.Infrastructure.Persistence.Repositories.DataSourceTypes;
 using SAS.ScrapingManagementService.Infrastructure.Persistence.UoW;
 using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Utilities;
@@ -45,7 +47,7 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.DependencyInj
 
             services.AddScoped(typeof(IRepository<,>), typeof(BaseRepository<,>));
             services.AddScoped<IDataSourceRepository, DataSourceRepository>();
-            services.AddScoped<IDataSourceTypeRepository, DataSourceTypeRepository>();
+            services.AddScoped<IDataSourceTypesRepository, DataSourceTypesRepository>();
             services.AddScoped<IPipelineRepository, PipelineRepository>();
 
             return services;

@@ -1,3 +1,5 @@
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
+using SAS.ScrapingManagementService.Domain.Platforms.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Entities;
 

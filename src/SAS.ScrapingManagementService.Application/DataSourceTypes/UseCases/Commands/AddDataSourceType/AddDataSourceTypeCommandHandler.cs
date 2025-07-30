@@ -1,20 +1,20 @@
 using Ardalis.Result;
 using MediatR;
 using SAS.ScrapingManagementService.Application.Contracts.Providers;
-using SAS.ScrapingManagementService.Domain.DataSources.DomainErrors;
-using SAS.ScrapingManagementService.Domain.DataSources.Entities;
-using SAS.ScrapingManagementService.Domain.DataSources.Repositories;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Repositories;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.DomainErrors;
+using SAS.ScrapingManagementService.Domain.DataSourceTypes.Entities;
 using SAS.SharedKernel.Repositories;
 
 namespace SAS.ScrapingManagementService.Application.DataSourceTypes.UseCases.Commands.AddDataSourceType
 {
     public sealed class AddDataSourceTypeCommandHandler : IRequestHandler<AddDataSourceTypeCommand, Result<Guid>>
     {
-        private readonly IDataSourceTypeRepository _typeRepo;
+        private readonly IDataSourceTypesRepository _typeRepo;
         private readonly IIdProvider _idProvider;
 
         public AddDataSourceTypeCommandHandler(
-            IDataSourceTypeRepository typeRepo,
+            IDataSourceTypesRepository typeRepo,
             IIdProvider idProvider)
         {
             _typeRepo = typeRepo;

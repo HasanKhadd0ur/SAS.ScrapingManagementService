@@ -119,4 +119,5 @@ namespace SAS.ScrapingManagementService.Application.Settings.Services
             return Result.Success();
         }
     }
+
 }

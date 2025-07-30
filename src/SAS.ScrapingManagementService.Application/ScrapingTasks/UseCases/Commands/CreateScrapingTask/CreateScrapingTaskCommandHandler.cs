@@ -12,7 +12,7 @@ using SAS.SharedKernel.CQRS.Commands;
 using SAS.SharedKernel.Repositories;
 using SAS.SharedKernel.Specification;
 
-namespace SAS.ScrapingManagementService.Application.Scrapers.UseCases.Commands.CreateScrapingTask
+namespace SAS.ScrapingManagementService.Application.ScrapingTasks.UseCases.Commands.CreateScrapingTask
 {
     public class CreateScrapingTaskCommandHandler : ICommandHandler<CreateScrapingTaskCommand, Result<Guid>>
     {

@@ -1,6 +1,6 @@
 using SAS.SharedKernel.Entities;
 
-namespace SAS.ScrapingManagementService.Domain.DataSources.Entities
+namespace SAS.ScrapingManagementService.Domain.Platforms.Entities
 {
     public class Platform : BaseEntity<Guid>
     {

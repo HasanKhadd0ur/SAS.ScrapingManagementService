@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SAS.ScrapingManagementService.Application.Platforms.UseCases.Queries.GetAllPlatfroms;
 using SAS.ScrapingManagementService.Presentation.Controllers.ApiBase;
 
-namespace SAS.ScrapingManagementService.API.Controllers
+namespace SAS.ScrapingManagementService.Presentation.Controllers.Platforms
 {
     [ApiController]
     [Route("api/[controller]")]

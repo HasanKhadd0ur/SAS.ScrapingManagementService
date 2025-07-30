@@ -5,7 +5,7 @@ using System.Text.Json;
 
 public partial class DataSourceDiscoveryEngine
 {
-    public class TopNamedEntitiesFeedbackService
+    public class TopNamedEntitiesFeedbackService 
     {
         private readonly IMessageConsumer _messageConsumer;
         private readonly DataSourceDiscoveryEngine _discoveryEngine;

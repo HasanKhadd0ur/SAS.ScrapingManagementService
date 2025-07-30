@@ -153,9 +153,29 @@ namespace SAS.ScrapingManagementService.Infrastructure.Persistence.EntitiesConfi
                 .HasForeignKey(e => e.DomainId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasMany(t => t.DataSources)
-                .WithOne();
-        }
+            
+            builder
+                .HasMany(t => t.DataSources)
+                .WithMany()
+                .UsingEntity<Dictionary<string, object>>(
+                    "ScrapingTaskDataSource",
+                    j => j
+                        .HasOne<DataSource>()
+                        .WithMany()
+                        .HasForeignKey("DataSourceId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j => j
+                        .HasOne<ScrapingTask>()
+                        .WithMany()
+                        .HasForeignKey("ScrapingTaskId")
+                        .OnDelete(DeleteBehavior.Cascade),
+                    j =>
+                    {
+                        j.HasKey("ScrapingTaskId", "DataSourceId");
+                        j.ToTable("ScrapingTaskDataSources");
+                    });
+
+                    }
     }
 
 }

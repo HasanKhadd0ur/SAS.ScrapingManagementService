@@ -31,7 +31,7 @@ namespace SAS.ScrapingManagementService.Application.ScrapingTasks.UseCases.Queri
             spec.AddInclude(t => t.ScrapingExecutor);
             spec.AddInclude(t => t.Domain);
             spec.AddInclude(t => t.DataSources);
-
+            
             var task = await _taskRepo.GetByIdAsync(request.Id,spec);
 
             if (task is null)

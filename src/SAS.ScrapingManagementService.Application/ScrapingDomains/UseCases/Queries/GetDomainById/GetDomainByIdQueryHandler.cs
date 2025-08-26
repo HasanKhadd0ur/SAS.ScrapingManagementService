@@ -8,6 +8,7 @@ using SAS.ScrapingManagementService.Domain.DataSources.Entities;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.DomainErrors;
 using SAS.ScrapingManagementService.Domain.ScrapingDomains.Entities;
 using SAS.SharedKernel.Repositories;
+using SAS.SharedKernel.Specification;
 
 namespace SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Queries.GetDomainById
 {
@@ -26,7 +27,12 @@ namespace SAS.ScrapingManagementService.Application.ScrapingDomains.UseCases.Que
 
         public async Task<Result<ScrapingDomainDto>> Handle(GetDomainByIdQuery request, CancellationToken cancellationToken)
         {
-            var domain = await _repo.GetByIdAsync(request.Id);
+            var spec = new BaseSpecification<ScrapingDomain>();
+            spec.AddInclude(e => e.DataSources);
+            spec.IncludeStrings.Add("DataSources.Platform");
+
+            spec.IncludeStrings.Add("DataSources.DataSourceType");
+            var domain = await _repo.GetByIdAsync(request.Id,spec);
 
             if (domain is null)
                 return Result.Invalid(ScrapingDomainErrors.UnExistDomain);

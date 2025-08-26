@@ -13,8 +13,4 @@ namespace SAS.ScrapingManagementService.Domain.Settings.Entities
 
         public string ParametersJson { get; set; }
     }
-    public class BlockedTerm : BaseEntity<Guid>
-    {
-        public string Term { get; set; } = default!;
-    }
 }

@@ -28,9 +28,10 @@ namespace SAS.ScrapingManagementService.Application.ScrapingTasks.UseCases.Queri
             CancellationToken cancellationToken)
         {
             var spec = new BaseSpecification<ScrapingTask>();
+            spec.ApplyOrderByDescending(e => e.PublishedAt);
             spec.AddInclude(e => e.ScrapingExecutor);
             spec.AddInclude(e => e.Domain);
-
+            
 
             spec.ApplyOptionalPagination(request.PageSize, request.PageNumber);
 

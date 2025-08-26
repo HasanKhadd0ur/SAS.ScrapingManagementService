@@ -1,5 +1,6 @@
 using SAS.ScrapingManagementService.Application.Common;
 using SAS.ScrapingManagementService.Application.DataSourceTypes.Common;
+using SAS.ScrapingManagementService.Application.Platforms.Common;
 using SAS.SharedKernel.Entities;
 
 namespace SAS.ScrapingManagementService.Application.DataSources.Common
@@ -10,6 +11,7 @@ namespace SAS.ScrapingManagementService.Application.DataSources.Common
         public string Target { get; set; }
         public Guid DomainId { get; set; }
         public Guid PlatformId { get; set; }
+        public PlatformDto Platform { get; set; }
         public int Limit { get; set; } = 1;
         public DataSourceTypeDto DataSourceType { get; set; }
     }
